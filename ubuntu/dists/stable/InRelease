@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 30 Oct 2025 06:44:07 +0000
+MD5Sum:
+ 68d4c32e5c11fed8ee35e1e4b7f43f54               38 Release
+ d37766dbfe7f8f0e646c581252a6227b              786 main/binary-amd64/Packages
+ ccadcbf2b1510de33fed5125c51d2c7b              528 main/binary-amd64/Packages.gz
+SHA1:
+ cca7343afad09eb172ddfd1e03623685fb393ad5               38 Release
+ a20aae4f6665dbd739370b46614585734d93761a              786 main/binary-amd64/Packages
+ 56414a0354c1e3b8b4a97949b21003f67b9597db              528 main/binary-amd64/Packages.gz
+SHA256:
+ 5e2267c251269fac9ae828a0639c34c8c396abc2342536c9d8e831675ad1457d               38 Release
+ 7cdb34593401529fa92aad78ed12911bd94f2111b5fec7920ec6542003b4f957              786 main/binary-amd64/Packages
+ 7795628d9930357c9b5563b1f3ced9c479364456ac7afa60908d6910c028185d              528 main/binary-amd64/Packages.gz
+SHA512:
+ 7254370015839c14ad83f5d6f9d583a00dc54eae93d2807530aae3da3ba2f9eb1b7fe2b6d4d91d75c3c57e3029ac46e83f7e59f58337da802438dda0530e497b               38 Release
+ 6c3ab842a9ade99a297f2ca15546b12f7570ebf09d5c1fdfb876bb65951dc1ce0540bfa4f612a5ad40ef1152629b2c2ece52def8d464ca26c05b88a325b274a2              786 main/binary-amd64/Packages
+ 4cfdf70eba1ef3b71de7cb6b43750c327ea7739f23c60d5509f3d58035f76b374d8baa53cb3e7a7145a93a73d88383fe8f5964f68094acfae62eae89ab726ce8              528 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEvEJst8llXNiMSQXuMl645a2TnO8FAmkDCX0ACgkQMl645a2T
+nO8OWw/9GyWhUHrQ1OW9XQKOGZRgeDKzHXAXYNOE8m/nFimAIvvAbJ+t6cCJDIBq
+/hDLlst0bvVmNUXfCWmKMI7i+ldsUfGRt7oO0VLY5gGVtRpmvCduYA0weD2ijVAY
+s6MdyK/QmLwxGQcbawYhqwaogh3V8x6PiaK4eLfQrMzXTrtkz6X37mj1oJTaYT8N
+ATGck8QxkjprdAwvNxgWzu22/Boe/0+3IffFHv31MwZEhp30Mcx9A+B0eMxqr45n
+28jqPq3lN/efQwrzDC+QEqaCk7qT39mQzRlZ9775i9lNii55czMV06ZNP2xQygjS
+yuygLoabNc/jTj7nldcNqhsg45+I8LHNBNp63XMrGajfzdL+8sUFhy2hMII423Lh
+XQTx+TH1U0Nq3Nh+WFpCz/ZXQeTguzdXw8Gx5/NjvLbHlvHTsC0Msmxx3YsP+hlj
+/E1p1LsBEHE172QOs7EdMX3LjRqZGy3s8+ELtTYVqalznR70zXET2d8Z4NCxu5f7
++NNtBNTgbzIGzD3HQEjIxh234OIvBJ65Z4TKybrIaEwPgzJ33JVPK6FrR85Blxb/
+fmyuZWyk3cvXo66KvxH8Fz2aVwaqQm0PwPERVYIjrYCGkDWKCVPec0ol6O+VMiif
+BbX6h0fHETooJ/2yoIq0BBU0uSS6sjbMP+gR8lpejFJimrGRiP0=
+=MFuv
+-----END PGP SIGNATURE-----

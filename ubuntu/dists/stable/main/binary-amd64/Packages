@@ -1,0 +1,18 @@
+Package: qshell
+Version: 5.4.0-1
+Architecture: amd64
+Maintainer: QShell Maintainer <405906552@qq.com>
+Installed-Size: 57904
+Depends: libc6 (>= 2.34), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.16.0), libgtk-3-0 (>= 3.21.4), libjavascriptcoregtk-4.0-18, libwebkit2gtk-4.0-37 (>= 2.21.1)
+Filename: pool/main/q/qshell/qshell_5.4.0-1_amd64.deb
+Size: 21767486
+MD5sum: 1a96da581298b91493c0a0a29d09db9b
+SHA1: 20dade95629435f3868a397a1d40b1b6f42a6f35
+SHA256: c0a459f19a8f4225b7a4ccf3d1215664caca596b772b1490cd5534f10dc4e528
+Section: utils
+Priority: optional
+Homepage: https://github.com/tea4go/qshell
+Description: Cross-platform modern terminal tool
+ QShell is a cross-platform modern terminal tool that integrates
+ multiple remote connection methods including SSH, Telnet, and more.
+
