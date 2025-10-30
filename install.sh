@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-REPO_URL="https://mredward123.github.io/qshell-apt-repo/ubuntu"
+REPO_URL="https://Mredward123.github.io/qshell-apt-repo/ubuntu"
 
 echo "Installing QShell from GitHub APT repository..."
 
