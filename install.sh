@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+REPO_URL="https://Mredward123.github.io/qshell-apt-repo/ubuntu"
+
 echo "Installing QShell from GitHub APT repository..."
 
 # 临时目录
@@ -10,50 +12,51 @@ cd "$TEMP_DIR"
 # 清理旧的 GPG 密钥
 sudo rm -f /etc/apt/trusted.gpg.d/qshell.gpg
 
-# 下载 GPG 密钥 - 使用可靠的 raw.githubusercontent.com
+# 下载 GPG 密钥（从根目录）
 echo "Adding GPG key..."
-if ! curl -fsSL https://raw.githubusercontent.com/Mredward123/qshell-apt-repo/main/gpg.key -o qshell.gpg; then
-    echo "✗ Failed to download GPG key"
-    exit 1
+if ! curl -fsSL https://Mredward123.github.io/qshell-apt-repo/gpg.key -o qshell.asc; then
+    echo "✗ Failed to download GPG key from GitHub Pages"
+    # 备选方案：从 raw.githubusercontent.com 下载
+    if ! curl -fsSL https://raw.githubusercontent.com/Mredward123/qshell-apt-repo/main/gpg.key -o qshell.asc; then
+        echo "✗ All GPG key download methods failed"
+        exit 1
+    fi
 fi
 
-# 验证 GPG 密钥
-if gpg --list-packets < qshell.gpg > /dev/null 2>&1; then
+# 转换 GPG 密钥格式
+if gpg --dearmor < qshell.asc > qshell.gpg 2>/dev/null; then
     sudo mv qshell.gpg /etc/apt/trusted.gpg.d/qshell.gpg
     sudo chmod 644 /etc/apt/trusted.gpg.d/qshell.gpg
     echo "✓ GPG key added successfully"
 else
-    echo "✗ Invalid GPG key format"
+    echo "✗ Failed to convert GPG key format"
     exit 1
 fi
 
-# 添加 APT 源 - 使用 GitHub Pages（即使网络有问题，用户可以在其他机器使用）
+# 添加 APT 源（指向 ubuntu/ 子目录）
 echo "Adding APT repository..."
-sudo tee /etc/apt/sources.list.d/qshell.list > /dev/null << 'SOURCE'
-deb [arch=amd64] https://Mredward123.github.io/qshell-apt-repo/ stable main
+sudo tee /etc/apt/sources.list.d/qshell.list > /dev/null << SOURCE
+deb [arch=amd64] $REPO_URL stable main
 SOURCE
 
 # 更新并安装
 echo "Updating package lists..."
-if ! sudo apt update; then
-    echo "⚠️ apt update failed - this might be due to network issues with GitHub Pages"
-    echo "The repository is set up correctly, but this server cannot access it."
-    echo "Other machines should be able to use this repository normally."
-    exit 1
+if sudo apt update; then
+    echo "✓ Package lists updated successfully"
+else
+    echo "⚠️ apt update completed with warnings"
 fi
 
 echo "Installing qshell..."
-if sudo apt install -y qshell 2>/dev/null; then
+if sudo apt install -y qshell; then
     echo "✓ QShell installed successfully!"
     echo "Run: qshell --version"
 else
-    echo "ℹ qshell package not found in repository"
-    echo "This is normal - the APT repository is set up and ready for when you add packages."
+    echo "✗ Failed to install qshell"
+    echo "Available packages:"
+    apt-cache search qshell || echo "No qshell packages found"
 fi
 
 # 清理
 cd /
 rm -rf "$TEMP_DIR"
-
-echo ""
-echo "✓ QShell APT repository setup completed!"
